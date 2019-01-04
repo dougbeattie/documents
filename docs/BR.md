@@ -676,6 +676,48 @@ The Random Value SHALL be unique in each email. The email MAY be re-sent in its 
 
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
+##### 3.2.2.4.15 Phone Contact with Domain Contact
+
+Confirm the Applicant's control over the FQDN by calling the Domain Contact’s phone number and obtain a confirming response to validate the ADN.
+
+Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+
+In the event that someone other than a Domain Contact is reached, the CA MAY request to be transferred to the Domain Contact. 
+
+In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated.  The Domain Contact may return the Random Number to the CA via Phone, Email, Fax, or SMS to approve the request. 
+
+The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.  
+
+Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
+
+##### 3.2.2.4.16: Domain Contact Phone published in a DNS CAA Record
+
+Confirm the Applicant's control over the FQDN by calling the phone number identified as a CAA Contact property record as defined in Appendix B and receive a confirming response to validate the ADN. 
+
+Each phone call MAY confirm control of multiple ADNs, provided that the same phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+
+The CA MAY NOT be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation. 
+
+In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated.  The CAA Contact may return the Random Number to the CA via Phone, Email, Fax, or SMS to approve the request. 
+
+The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.  
+
+Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
+
+##### 3.2.2.4.17: Domain Contact Phone published in a DNS TXT Record
+
+Confirm the Applicant's control over the FQDN by calling the phone number identified as a CAA Contact property record as defined in Appendix B and receive a confirming response to validate the ADN. 
+
+Each phone call MAY confirm control of multiple ADNs, provided that the same phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+
+The CA MAY NOT be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation. 
+
+In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated.  The CAA Contact may return the Random Number to the CA via Phone, Email, Fax, or SMS to approve the request.
+
+The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.  
+
+Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
+
 #### 3.2.2.5 Authentication for an IP Address
 For each IP Address listed in a Certificate, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant has control over the IP Address by:
 

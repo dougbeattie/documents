@@ -590,6 +590,8 @@ Note: Once the FQDN has been validated using this method, the CA MAY also issue 
 Confirming the Applicant's control over the FQDN by calling the Domain Name Registrant's phone number and obtaining a response confirming the Applicant's request for validation of the FQDN. The CA MUST place the call to a phone number identified by the Domain Name Registrar as the Domain Contact.
 Each phone call SHALL be made to a single number and MAY confirm control of multiple FQDNs, provided that the phone number is identified by the Domain Registrar as a valid contact method for every Base Domain Name being verified using the phone call.
 
+CAs SHALL NOT perform validations using this method after July 31, 2019.  Completed validations using this method SHALL continue to be valid for subsequent issuance per the applicable certificate data reuse periods.”
+
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names. 
 
 ##### 3.2.2.4.4 Constructed Email to Domain Contact
@@ -690,7 +692,7 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
-##### 3.2.2.4.16: Domain Contact Phone published in a DNS CAA Record
+##### 3.2.2.4.16 Domain Contact Phone published in a DNS CAA Record
 
 Confirm the Applicant's control over the FQDN by calling the phone number identified as a CAA Contact property record as defined in Appendix B and receive a confirming response to validate the ADN. 
 
@@ -704,7 +706,7 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
-##### 3.2.2.4.17: Domain Contact Phone published in a DNS TXT Record
+##### 3.2.2.4.17 Domain Contact Phone published in a DNS TXT Record
 
 Confirm the Applicant's control over the FQDN by calling the phone number identified as a CAA Contact property record as defined in Appendix B and receive a confirming response to validate the ADN. 
 
@@ -2043,8 +2045,25 @@ $ORIGIN example.com.
 
 The contactemail property MAY be critical, if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
 
+B.1.2. CAA contactphone Property
+ 
+The CAA contactphone property takes a phone number as its parameter.  The entire parameter value of the MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.  Global Numbers MUST have a preceding + and a country code and MAY contain visual separators.
+
+The following is an example where the holder of the domain specified the contact property using a phone number.
+
+$ORIGIN example.com.
+               CAA 0 contactphone "+1 (555) 123-4567"
+
+The contactphone property MAY be critical if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
+
 B.2. DNS TXT Methods
 
 B.2.1. DNS TXT Record Email Contact
 
 The DNS TXT record MUST be placed on the "_validation-contactemail" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
+
+B.2.2. DNS TXT Record Phone Contact
+
+The DNS TXT record MUST be placed on the "_validation-contactphone" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.
+
+

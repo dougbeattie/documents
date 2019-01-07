@@ -260,9 +260,13 @@ No stipulation.
 
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA, and whose activities are not within the scope of the appropriate CA audits, to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
-**DNS CAA Email Contact**: The email address defined in section B.1.2.
+**DNS CAA Email Contact**: The email address defined in section B.1.1.
 
-**DNS TXT Record Email Contact**: The email address defined in section B.2.2.
+**DNS CAA Phone Contact**: The phone number defined in section B.1.2.
+
+**DNS TXT Record Email Contact**: The email address defined in section B.2.1.
+
+**DNS TXT Record Phone Contact**: The phone number defined in section B.2.2.
 
 **Domain Authorization Document**: Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
 
@@ -680,9 +684,7 @@ Note: Once the FQDN has been validated using this method, the CA MAY also issue 
 
 ##### 3.2.2.4.15 Phone Contact with Domain Contact
 
-Confirm the Applicant's control over the FQDN by calling the Domain Contact’s phone number and obtain a confirming response to validate the ADN.
-
-Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+Confirm the Applicant's control over the FQDN by calling the Domain Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 
 In the event that someone other than a Domain Contact is reached, the CA MAY request to be transferred to the Domain Contact. 
 
@@ -694,13 +696,11 @@ Note: Once the FQDN has been validated using this method, the CA MAY also issue 
 
 ##### 3.2.2.4.16 Domain Contact Phone published in a DNS CAA Record
 
-Confirm the Applicant's control over the FQDN by calling the phone number identified as a CAA Contact property record as defined in Appendix B and receive a confirming response to validate the ADN. 
-
-Each phone call MAY confirm control of multiple ADNs, provided that the same phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+Confirm the Applicant's control over the FQDN by calling the DNS CAA Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS CAA Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 
 The CA MAY NOT be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation. 
 
-In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated.  The CAA Contact may return the Random Number to the CA via Phone, Email, Fax, or SMS to approve the request. 
+In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated.  The DNS CAA Phone Contact may return the Random Number to the CA via Phone, Email, Fax, or SMS to approve the request. 
 
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.  
 
@@ -708,13 +708,11 @@ Note: Once the FQDN has been validated using this method, the CA MAY also issue 
 
 ##### 3.2.2.4.17 Domain Contact Phone published in a DNS TXT Record
 
-Confirm the Applicant's control over the FQDN by calling the phone number identified as a CAA Contact property record as defined in Appendix B and receive a confirming response to validate the ADN. 
-
-Each phone call MAY confirm control of multiple ADNs, provided that the same phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+Confirm the Applicant's control over the FQDN by calling the DNS TXT Record Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS TXT Record Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 
 The CA MAY NOT be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation. 
 
-In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated.  The CAA Contact may return the Random Number to the CA via Phone, Email, Fax, or SMS to approve the request.
+In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated.  The DNS TXT Record Contact may return the Random Number to the CA via Phone, Email, Fax, or SMS to approve the request.
 
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.  
 
@@ -2046,6 +2044,8 @@ $ORIGIN example.com.
 The contactemail property MAY be critical, if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
 
 B.1.2. CAA contactphone Property
+
+SYNTAX: contactemail <rfc3966 Global Number> 
  
 The CAA contactphone property takes a phone number as its parameter.  The entire parameter value of the MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.  Global Numbers MUST have a preceding + and a country code and MAY contain visual separators.
 

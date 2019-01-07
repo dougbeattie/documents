@@ -694,7 +694,7 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
-##### 3.2.2.4.16 Domain Contact Phone published in a DNS CAA Record
+##### 3.2.2.4.16 Phone Contact with DNS CAA Phone Contact 
 
 Confirm the Applicant's control over the FQDN by calling the DNS CAA Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS CAA Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 
@@ -706,7 +706,7 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
-##### 3.2.2.4.17 Domain Contact Phone published in a DNS TXT Record
+##### 3.2.2.4.17 Phone Contact with DNS TXT Record Phone Contact 
 
 Confirm the Applicant's control over the FQDN by calling the DNS TXT Record Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS TXT Record Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 

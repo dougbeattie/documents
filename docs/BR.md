@@ -684,7 +684,7 @@ Note: Once the FQDN has been validated using this method, the CA MAY also issue 
 
 Confirm the Applicant's control over the FQDN by calling the Domain Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 
-In the event that someone other than a Domain Contact is reached, the CA MAY request to be transferred to the Domain Contact, provided that such a name, role or descriptor is part of the provided Domain Contact. 
+In the event that someone other than a Domain Contact is reached, the CA MAY request to be transferred to the Domain Contact. 
 
 In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated. The Random Value MUST be returned to the CA to approve the request.
 

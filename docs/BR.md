@@ -2086,7 +2086,7 @@ B.1.2. CAA contactphone Property
 
 SYNTAX: contactemail <rfc3966 Global Number> 
  
-The CAA contactphone property takes a phone number as its parameter.  The entire parameter value of the MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.  Global Numbers MUST have a preceding + and a country code and MAY contain visual separators.
+The CAA contactphone property takes a phone number as its parameter.  The entire parameter value MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.  Global Numbers MUST have a preceding + and a country code and MAY contain visual separators.
 
 The following is an example where the holder of the domain specified the contact property using a phone number.
 

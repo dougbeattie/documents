@@ -708,7 +708,7 @@ Confirm the Applicant's control over the FQDN by calling the DNS CAA Phone Conta
 
 The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 6844 Section 4, as amended by Errata 5065 (Appendix A).
 
-The CA MAY NOT be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation. 
+The CA MUST NOT be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation. 
 
 In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated.  The DNS CAA Phone Contact may return the Random Number to the CA via Phone, Email, Fax, or SMS to approve the request. 
 
@@ -2043,7 +2043,7 @@ The contactemail property MAY be critical, if the domain owner does not want CAs
 
 B.1.2. CAA contactphone Property
 
-SYNTAX: contactemail <rfc3966 Global Number> 
+SYNTAX: contactphone <rfc3966 Global Number> 
   
 The CAA contactphone property takes a phone number as its parameter.  The entire parameter value of the MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.  Global Numbers MUST have a preceding + and a country code and MAY contain visual separators.
 

@@ -372,6 +372,8 @@ A Request Token may also be concatenated with a timestamp or other data. If a CA
 The script outputs:
   201602251811c9c863405fe7675a3988b97664ea6baf442019e4e52fa335f406f7c5f26cf14f
 
+**Required Website Content**: Either a Random Value or a Request Token, together with additional information that uniquely identifies the Subscriber, as specified by the CA.
+
 **Requirements**: The Baseline Requirements found in this document.
 
 **Reserved IP Address**: An IPv4 or IPv6 address that the IANA has marked as reserved:
